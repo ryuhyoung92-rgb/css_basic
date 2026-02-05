@@ -1,0 +1,25 @@
+body {}
+#wrap #phone {
+    margin:50px auto 0;
+    width:1100px;
+}
+#wrap #phone th {padding:15px 0;}
+#wrap #phone td {padding:20px 0;}
+#wrap #phone thead {
+    border:2px solid #000;
+    border-left:0;
+    border-right:0;
+}
+#wrap #phone thead tr {
+    background-color:#eee;
+}
+#wrap #phone thead tr:nth-child(1) {border-bottom:2px dashed #aaa;}
+#wrap #phone thead tr th {}
+#wrap #phone thead tr th img {width:50px;}
+#wrap #phone thead tr th span {
+    font-size:0.8rem; color:#aaa;
+    display:block;
+}
+#wrap #phone tbody tr {border-bottom:1px solid #000;}
+#wrap #phone tbody tr th {}
+#wrap #phone tbody tr td {width:200px; text-align:center;}
