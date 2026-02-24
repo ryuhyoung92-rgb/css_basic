@@ -187,3 +187,13 @@
     * `flex-start, flex-end, center` 위 메인축과 뜻 동일
 * `align-content:` 교차축이 2줄 이상일때
     * `flex-start, flex-end, center, space-between, space-around` 위 메인축과 뜻 동일, 값 동일
+## 웹브라우저 별 스크롤 디자인(그대로 복사해 사용하기) - 색깔은 같은 색상끼리 통일해 사용하기
+/* Firefox */
+html {scrollbar-width: 10px;;scrollbar-color: #222 #e73b3b;}
+/* Opera */
+html::-o-scrollbar {width: 10px;}
+html::-o-scrollbar-thumb {background-color: #222;border-radius: 5px;}
+/* Chrome, Safari, Edge 등 웹킷 기반 브라우저 */
+::-webkit-scrollbar {width: 10px;}
+::-webkit-scrollbar-track {box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);}
+::-webkit-scrollbar-thumb {background-color: #222;border-radius: 5px;}
