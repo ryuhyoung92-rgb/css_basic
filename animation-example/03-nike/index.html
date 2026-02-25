@@ -29,8 +29,12 @@
         #v_btn a {
             width:100px; margin:0 10px; 
             display:flex; align-items:flex-end;
+            transform:rotate(0);
+            transform-origin:right bottom;
+            transition:transform 0.3s;
         }
         #v_btn a img {width:100%;}
+        #v_btn a:hover {transform:rotate(10deg);}
     </style>
     <script>
         window.onload=function(){

@@ -60,8 +60,10 @@
             width:1200px; height:100vh; margin: 0 auto;
             display:flex; justify-content: space-between; align-items:center;
         }
-        main .center h1 {color:#fff; display:flex; flex-flow:column nowrap; justify-content: space-between;}
-        main .center h1 span {font-size:3.5rem; letter-spacing:-2.5px; padding:10px 0;}
+        main .center h1 {display:flex; flex-flow:column nowrap; justify-content: space-between;}
+        main .center h1 span {font-size:3.5rem; letter-spacing:-2.5px; padding:10px 0; color:#fff;}
+        main .center h1 span:nth-child(1) {}
+        main .center h1 span:nth-child(2) {opacity:0;}
         main .center .right {
             position:relative; right:174px; top:-100px;
         }
@@ -71,6 +73,23 @@
         main .center .right span:nth-child(1) {}
         main .center .right span:nth-child(2) {text-align:center; line-height:174px;}
         /* animation */
+        main .center h1 span:nth-child(1) {animation:top 1s linear both;}
+        main .center h1 span:nth-child(2) {animation:top 1s 1s linear both;}
+        main .center .right {animation:right 1.5s linear;}
+        main .center .right span:nth-child(1) {animation:rotate 10s linear infinite;}
+        /* keyframes */
+        @keyframes top {
+            0% {opacity:0; transform:translateY(20px);}
+            100% {opacity:1; transform:translateY(0)}
+        }
+        @keyframes right {
+            0% {opacity:0; transform:translateX(150px);}
+            100% {opacity:1; transform:translateX(0);}
+        }
+        @keyframes rotate {
+            0% {transform:rotate(0deg);}
+            100% {transform:rotate(360deg);}
+        }
     </style>
 </head>
 <body>
