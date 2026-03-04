@@ -1,0 +1,46 @@
+/* mobile -> pc 점점 크게 */
+#wrap {
+    margin:0 auto;
+    padding:0 15px;
+    min-width:320px;
+    max-width:1440px;
+    background-color:lightgray;
+}
+#wrap > * {
+    border:1px solid #000;
+}
+#wrap header {
+    height:60px;
+    display:flex; flex-flow:row nowrap;
+    justify-content:space-between; align-items:center;
+}
+#wrap header h1 {}
+#wrap header nav {}
+#wrap main {}
+#wrap main section {
+    line-height:400px; text-align:center;
+    background:linear-gradient(40deg, yellowgreen, yellow)
+    /* display:flex; flex-flow:column nowrap;
+    justify-content:center; align-items:center; */
+}
+#wrap main section:nth-child(1) {}
+#wrap main section:nth-child(2) {}
+#wrap footer {
+    line-height:100px;/* 요소가 한줄일때만 수직중앙으로 보낼 수 있음 / 두줄일때는 한줄 한줄 따로 적용됨 */
+    text-align:center;
+    /* display:flex; flex-flow:row nowrap;
+    justify-content:center; align-items:center; */
+}
+/* =======================================================================반응형웹규칙시작 */
+@media screen and (min-width:480px) {
+    #wrap {
+        padding:0 30px;
+    }
+    #wrap main {display:flex; flex-flow:row-nowrap;}
+    #wrap main section {width:50%;}
+}/* 480~819 */
+@media screen and (min-width:820px) {
+    #wrap header {
+        flex-flow:column nowrap; justify-content: center;
+    }
+}/* 820~1440 */

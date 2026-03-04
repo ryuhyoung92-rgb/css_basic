@@ -1,4 +1,4 @@
-body, html {background:rgb(9,13,43)}
+body, html {background:rgb(9,13,43);}
 /* design */
 header {
     height:80px; width:1400px; margin:0 auto;
@@ -28,6 +28,22 @@ main {
     margin: 0 auto;
     top: 80px;
     text-align: center;
+}
+main::before, main::after {
+    content:''; display:block;/* before, after 가상요소 ★필수속성 */
+    position:absolute;/* 형제랑 겹치는 위치 속성 */
+    width:30%; height:100%;/* 부모에 상대적인 크기 */
+    z-index:999;/* 형제와 겹치는 중첩순서 */
+}
+main::before {
+    /* background-color: yellow; 구분목적 배경 색상 */
+    left:0; top:0;/* 좌표 설정 */
+    background:linear-gradient(90deg, rgb(9,13,43), transparent)
+}
+main::after {
+    /* background-color: yellow; */
+    right:0; top:0;
+    background:linear-gradient(90deg, transparent, rgb(9,13,43));
 }
 main > * {max-width:1400px; margin:0 auto;}
 /* 중첩순서 처리 배경(10) 그라디언트(20) 나머지(30) */
@@ -60,4 +76,8 @@ main .car #left_tire, main .car #right_tire {
 }
 main .car #left_tire {left:102px;}
 main .car #right_tire {right:91px;}
+footer {
+    height:200px; color:#fff;
+    background:linear-gradient(40deg, purple, transparent, brown, black, rgba(255,255,255,0.5));
+}
 

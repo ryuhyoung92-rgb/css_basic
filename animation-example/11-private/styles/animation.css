@@ -1,0 +1,29 @@
+/* keyframes */
+@keyframes rotate {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+@keyframes x500 {
+    from {opacity:0; transform:translateX(500px);}
+    to {opacity:1; transform:translateX(0);}
+}
+@keyframes bg_pst {
+    0% {background-position-x:0;}
+    100% {background-position-x:1000px;}
+    /* position:; 요소 움직임 */
+    /* background-position:; 요소 고정, 요소 안 배경이미지 이동 */
+    /* background-position:x y; */
+    /* background-position-x:x; */
+}
+@keyframes mouse_hint {
+    0% {transform:translateY(0);}
+    100% {transform:translateY(10px);}
+}
+/* animation */
+main .car #left_tire,
+main .car #right_tire {animation:rotate 1s linear infinite;}
+main .car {animation:x500 1s ease both;}/* ease(빠르게 들어와서 천천히 멈춤)는 기본 가속도라 생략가능 */
+main .bg_wrap .bg1 {animation:bg_pst 100s linear infinite;}
+main .bg_wrap .bg2 {animation:bg_pst 20s linear infinite;}
+main .bg_wrap .bg3 {animation:bg_pst 10s linear infinite;}
+main .scroll img {animation:mouse_hint 1s linear alternate infinite;}

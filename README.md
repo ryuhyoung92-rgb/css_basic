@@ -228,3 +228,41 @@ html::-o-scrollbar-thumb {background-color: #222;border-radius: 5px;}
 * `transform:translate(10px, 20px);` x, y 이동 순서로 작성
 * 다른 모든 속성은 중심이 왼쪽 상단, **transform만 유일하게 가운데가 기준점**
 * 기준점 변경방법 : `transform-origin:x y`
+background: linear-gradient(to right, #ff00ff, #00ffff, #ff00ff);
+## webkit- 파이어폭스, 크롬 등 브라우저에서 안전하게 속성 적용하는 웹브라우저 엔진 명령 -> 밑에 4줄이 한쌍
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+color: transparent;
+## 글자 안에서 그라데이션 효과 및 배경이미지를 마스크씌워서 보여주고 싶을때 사용하는 속성값 모음
+main h1 {
+    margin:0 auto; font-weight:700; 
+    font-size:5rem; text-align: center;
+    background: linear-gradient(to right, #ff00ff, #00ffff, #ff00ff);
+    /* -webkit- 파이어폭스, 크롬 등 브라우저에서 안전하게 속성 적용하는 웹브라우저 엔진 명령 -> 밑에 4줄이 한쌍 */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+main h2 {
+    font-family: 'Black Ops One';
+    text-shadow:0 0 20px rgba(255,255,255,0.2);
+    font-size:10rem; text-align: center; font-weight:700; 
+    background: url(https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) center / cover;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+## 반응형웹 설정
+* 설계방향 모바일 -> PC 점점 크게(min-width)
+* 설계방향 PC -> 모바일 점점 작게(max-width)
+    * `@keyframes 애니메이션이름 {애니메이션규칙}` -> `animation`
+    * `@media screen and (규칙) {실행명령어}`
+    * `@media screen and (w320~) {320이상일때 재배열 명렁어}`
+    * `@media screen and (w760~) {760이상일때 재배열 명렁어}`
+    * `media 규칙괄호 안에는 세미콜론(;) 금지`
+## 반응형 제작 주의사항
+1. @media 규칙선언전 기존CSS에서 유지하고 싶은건 쓰지 않기
+2. @madia 규칙선언 후 재배열하고 싶은 CSS는 반드시 기존CSS에서 어느선택자에 어떤값으로 썼는지 확인하고 동일한 선택자에 동일속성으로 값만 바꿔서 입력하기
